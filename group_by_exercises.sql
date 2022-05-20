@@ -17,24 +17,24 @@ Group by title;
 -- names of all employees 
 -- that start and end with 'E' using GROUP BY.
 
-SELECT last_name
+SELECT count(last_name)
 FROM employees
 WHERE last_name LIKE 'E%' 
 AND LAST_name LIKE '%E'
 Group BY last_name; 
 
 -- 4
-SELECT DISTINCT last_name
+SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE 'E%' 
 AND LAST_name LIKE '%E'
-Group BY last_name; 
+Group BY first_name, last_name; 
 
 -- this gave me the same responce
 
 -- 5
 
-SELECT (DISTINCT last_name)
+SELECT DISTINCT last_name
 FROM employees
 WHERE last_name LIKE '%q%' AND 
  last_name NOT LIKE '%qu%';
@@ -57,11 +57,10 @@ WHERE last_name LIKE '%q%' AND
 WHERE first_name IN ('Irena', 'Vidya','Maya')
 GROUP BY Gender;
 
-SELECT count(gender), gender FROM employees
-WHERE first_name = 'Irena' OR 'Vidya'
-OR 'Maya'
-Group by Gender;
-
+SELECT count(gender), gender, first_name FROM employees
+WHERE first_name IN ('Irena', 'Vidya','Maya')
+Group by Gender, first_name;
+#this is the correct answer 
 -- 144 M
 -- 97 F
 
