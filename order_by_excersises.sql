@@ -33,7 +33,7 @@ SELECT last_name, first_name, hire_date
 FROM employees
 WHERE last_name LIKE 'E%' 
 AND LAST_name LIKE '%E'
-ORDER BY hire_date DESC;
+ORDER BY hire_date;
 # newest is ELDRIDGE TEIJI hired in 1999-11-27
 # oldest is EDRE sergi 1985-02-02
 
@@ -42,10 +42,14 @@ SELECT hire_date, Birth_date, first_name, Last_name
 FROM employees 
 WHERE hire_date BETWEEN '1990-12-25' AND '1999-12-25'
  AND Birth_date LIKE '%-12-25'
- ORDER BY hire_date ASC;
+ ORDER BY hire_date DESC;
  
  #287 employees
  #oldest emplyee khurn
  #youngest employee 
- 
+ SELECT hire_date, Birth_date, first_name, Last_name
+FROM employees 
+WHERE hire_date BETWEEN '1990-12-25' AND '1999-12-25'
+ AND Birth_date LIKE '%-12-25'
+ ORDER BY hire_date DESC, Hire_date ASC;
  SELECT * FROM employees.employees;

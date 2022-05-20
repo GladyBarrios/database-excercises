@@ -11,15 +11,19 @@ WHERE first_name IN ('Irena', 'Vidya','Maya');
 -- i got 709 rows returned 
 -- 3 
 SELECT first_name, last_name FROM employees
-WHERE first_name = 'Irena' OR 'Vidya'
-OR 'Maya'; 
+WHERE first_name = 'Irena' OR 
+first_name = 'Vidya'
+OR 
+First_name = 'Maya'; 
 
  # there is less rows I got 473 
 -- 4
 SELECT first_name, last_name, Gender FROM employees
-WHERE Gender = ('M')
-AND first_name IN ('Irena', 'Vidya')
-OR ('Maya');
+WHERE first_name = 'Irena' OR 
+first_name = 'Vidya'
+OR 
+First_name = 'Maya'
+AND gender = 'M';
 -- 295 records retuned 
 SELECT first_name, last_name, gender FROM employees
 WHERE Gender = ('M')
@@ -95,7 +99,7 @@ WHERE last_name LIKE '%q%';
  SELECT last_name
 FROM employees
 WHERE last_name LIKE '%q%' AND 
- last_name NOT LIKE '%u%';
+ last_name NOT LIKE '%qu%';
  
  #547
 
