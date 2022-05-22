@@ -1,26 +1,61 @@
 SELECT * FROM employees.departments;
 
-DESCRIBE departments;
-DESCRIBE dept_emp;
-DESCRIBE dept_manager;
+
 SHOW TABLES;
-DESCRIBE departments;
--- this one departments is string type--
-DESCRIBE dept_emp;
+-- 3
+ USE employees; 
+ -- 4
+ Show tables;
+ -- dept 
+ -- dept employee
+ -- dept manager 
+ --  employees
+ -- salaries 
+ -- titles 
+ 
+ 
+ -- 5
+  describe employees;
+  -- emp_no
+  -- birth_Date
+  -- first name
+  -- last name 
+  -- gender
+  -- and hire date 
+
+  # Which table(s) do you think contain a numeric type column?
+ describe employees;
+ -- emp_no would be numeric 
+
+ # Which table(s) do you think contain a string type column? 
+describe employees;
+ -- first name, last name, and gender are string type 
+ # Which table(s) do you think contain a date type column?
+describe employees;
+ -- hire date and the birthday would be date types 
+ -- this would only be for the employees table 
+ 
+ DESCRIBE dept_emp;
 -- this one has all three types, it had date types it has string types--
 -- it also has numeric--
-DESCRIBE dept_manager;
+ 
+ DESCRIBE dept_manager;
 -- this one has all three types, it had date types it has string types--
 -- it also has numeric--
-DESCRIBE employees;
--- this has 3 types 
+
 DESCRIBE salaries;
 -- this has string and date types
+
 DESCRIBE titles;
 -- this one has strings and date and numeric 
-DESCRIBE employees;
--- relationship btween both are employess and department are throguh the 
--- department number and the employee
+
+
+ -- What is the relationship between the employees and the departments tables?
+describe departments;
+describe employees;
+ -- departments only has string types 
+ -- where as employees has all three data types 
+## question 10 
 show create table dept_manager;
 -- 'CREATE TABLE `dept_manager` (
 --  `emp_no` int NOT NULL,
