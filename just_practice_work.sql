@@ -396,7 +396,17 @@ Where de.to_date = '9999-01-01'
 AND s.to_date = '9999-01-01'
 ORDER BY DEPARTMENT_NAME ASC;
 -
+-- subqueries excersises 
 
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE emp_no = 
+(
+    SELECT emp_no
+    FROM employees
+    WHERE emp_no = 101010
+)
+AND emp_no > now();
 
 
 

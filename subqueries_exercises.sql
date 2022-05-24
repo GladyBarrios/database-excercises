@@ -68,14 +68,27 @@ Where to_date > now());
 -- 168
 
 -- 3 
+
+
 Select count(to_date) from salaries
 Where to_date > now();
 
-Select count(to_date) from dept_emp
-Where to_date > now();
+Select count(*)
+FROM employees 
+where emp_no 
+NOT IN (Select emp_no from salaries
+Where to_date > now());
 
-
-
+select count(*) # count all the records
+from employees # from the employees table
+where emp_no not in 
+	(select emp_no
+	from dept_emp
+	where to_date > now()
+);
+-- 59900 people do not work at the company
+Select emp_no from dept_emp
+where to_date > now();
 
 
 
@@ -85,6 +98,7 @@ FROM employees
 WHERE emp_no IN (
     SELECT emp_no
     FROM dept_manager
+    WHere to_date > now()
 )
 AND gender = 'f';
 
@@ -97,9 +111,21 @@ select AVG(salary) from salaries;
 -- 63,810 avg salary historically 
 -- 6
 Select emp_no, salary
-from salaries 
+from salaries s
+JOIN employees e using(emp_no)
 where salary > (select AVG(salary) from salaries)
 AND to_date > now();
+
+
+select count(emp_no)
+from salaries s
+join employees e using(emp_no)
+where to_date > now() 
+and  salary > (select avg(salary) from salaries);
+-- total of 154543
+
+
+
 
 
 -- 6 
@@ -111,12 +137,50 @@ group by emp_no;
 
 -- STD()
 
-select MAX(salary) from salaries;
+select MAX(salary) from salaries where to_date > now();
+-- 158220
+select std(salary) from salaries where to_date > now();
+-- 17309.---
+-- going to be subtracting the MAX from the STD
 
--- count 83 
+SELECT count(*)
+from salaries 
+Where to_date > now()
+AND salary > (select MAX(salary) from salaries where to_date > now())-
+(select std(salary) from salaries where to_date > now());
 
-select count(*) 
-from salaries
-Where salary >= (select MAX(salary)- (std(salary))
-from salaries
-where to_date >now());
+
+-- Bonus questions 
+
+-- current femail manager-- they want department names-
+Select gender, dept_name 
+from employees
+Join dept_manager de using (emp_no)
+Join departments d using (dept_no)
+WHERE gender IN (select gender from employees 
+Where gender = 'f')
+AND to_date > now(); 
+
+-- BONUS question 2 
+
+Select MAX(salary) from salaries;
+
+Select first_name, Last_name 
+FROM employees
+Join salaries s using (emp_no)
+Where salary = (Select MAX(salary) from salaries
+where to_date > now()); 
+-- tokuyasu pesch
+
+-- BONUS question 3
+Select first_name, Last_name, dep.dept_name
+FROM employees
+Join salaries s using (emp_no)
+JOIN dept_emp de using (emp_no)
+JOIN departments dep using (dept_no)
+Where salary = (Select MAX(salary) from salaries
+where to_date > now()); 
+
+-- hes in sales-- 
+
+
