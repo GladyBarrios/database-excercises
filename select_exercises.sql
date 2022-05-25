@@ -8,7 +8,7 @@ DESCRIBE albums;
 Select * FROM albums;
 
 -- a. How many rows are in the albums table?
-
+select count(*) from albums;
 -- 31
 -- b. How many unique artist names are in the albums table?
 select distinct (artist) from albums;
@@ -55,6 +55,7 @@ SELECT *
 FROM albums
 WHERE release_date BETWEEN 1990 AND 2000;
 
+
 -- 11 albums 
 
 
@@ -62,6 +63,7 @@ SELECT * FROM albums
 WHERE sales < 20;
 -- 13 albums 
 
--- 4f it need to be more specific 
+-- 4f the code needs to be more specific, it is only looking for ROCK and nothing that 
+-- is "like" rock.
 
 

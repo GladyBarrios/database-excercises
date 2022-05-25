@@ -2,6 +2,8 @@
 USE titles;
 Select * from titles;
 
+
+
 #2
 SELECT DISTINCT title FROM titles
 Group by title;
@@ -13,6 +15,8 @@ Group by title;
 -- technique leader
 -- manager 
 
+
+
 -- 3 Write a query to to find a list of all unique last 
 -- names of all employees 
 -- that start and end with 'E' using GROUP BY.
@@ -23,6 +27,8 @@ WHERE last_name LIKE 'E%'
 AND LAST_name LIKE '%E'
 Group BY last_name; 
 
+
+
 -- 4
 SELECT first_name, last_name
 FROM employees
@@ -31,6 +37,8 @@ AND LAST_name LIKE '%E'
 Group BY first_name, last_name; 
 
 -- this gave me the same responce
+
+
 
 -- 5
 

@@ -3,19 +3,28 @@ SELECT * FROM employees.employees;
 SELECT first_name, last_name FROM employees.employees
 WHERE first_name IN ('Irena', 'Vidya','Maya')
 ORDER BY FIRST_name;
-# first name on the list is irena reutenauer 
+# first name on the list is 
+-- irena reutenauer 
+--  Vidya	Simmen	M	
+
+
+
  -- 3
  SELECT first_name, last_name FROM employees.employees
 WHERE first_name IN ('Irena', 'Vidya','Maya')
 ORDER BY FIRST_name, last_name;
 # irena acton 
+--  Vidya	Simmen	M
+
+
 
 -- 4
 SELECT last_name, first_name FROM employees.employees
 WHERE first_name IN ('Irena', 'Vidya','Maya')
 ORDER BY last_name, first_name;
 
-# same first name last name zyda maya 
+# same first name irena acton 
+-- last name zyda maya 
 
 -- 5 
 

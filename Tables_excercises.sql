@@ -1,10 +1,11 @@
-SELECT * FROM employees.departments;
 
+
+-- 3
+use employees;
 
 SHOW TABLES;
--- 3
- USE employees; 
- -- 4
+-- 3 and 4 
+ 
  Show tables;
  -- dept 
  -- dept employee
@@ -22,14 +23,16 @@ SHOW TABLES;
   -- last name 
   -- gender
   -- and hire date 
-
+-- 6
   # Which table(s) do you think contain a numeric type column?
  describe employees;
  -- emp_no would be numeric 
-
+-- 7
  # Which table(s) do you think contain a string type column? 
 describe employees;
  -- first name, last name, and gender are string type 
+ 
+ -- 8
  # Which table(s) do you think contain a date type column?
 describe employees;
  -- hire date and the birthday would be date types 
@@ -49,7 +52,7 @@ DESCRIBE salaries;
 DESCRIBE titles;
 -- this one has strings and date and numeric 
 
-
+-- 9
  -- What is the relationship between the employees and the departments tables?
 describe departments;
 describe employees;

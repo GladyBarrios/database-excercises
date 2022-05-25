@@ -50,8 +50,8 @@ as USERNAME,
 first_name, Last_name, Birth_date
 FROM employees;
 -- correct answer 
-Select  FROM employees AND 
-Select SUBSTR(Last_Name,1,4) FROM employees;
- 
-Select SUBSTR((First_name,1,1)(Last_Name,1,4)) from employees;
+-- Select  FROM employees AND 
+-- Select SUBSTR(Last_Name,1,4) FROM employees;
+--  
+-- Select SUBSTR((First_name,1,1)(Last_Name,1,4)) from employees;
 
